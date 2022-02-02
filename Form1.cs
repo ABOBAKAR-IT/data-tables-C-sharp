@@ -27,6 +27,7 @@ namespace data_tables
             row1["CNIC"] = "24134513451345";
             data.Rows.Add(row1);
 
+
             dataGridView1.DataSource = data;
             dataGridView1.Refresh();
         }
