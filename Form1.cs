@@ -44,6 +44,7 @@ namespace data_tables
             row1["CNIC"] = cnic.Text;
             data.Rows.Add(row1);
             dataGridView1.Refresh();
+
             name.Text = "";
             roll.Text = "";
             cnic.Text = "";
@@ -61,6 +62,26 @@ namespace data_tables
                     {
                         row["Name"] = name.Text;
                         row["CNIC"] = cnic.Text;
+                        break;
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Kindly Fill the Requirements!");
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(roll.Text))
+            {
+                foreach (DataRow row in data.Rows)
+                {
+                    if (row["Roll"].ToString() == roll.Text)
+                    {
+                        data.Rows.Remove(row);
                         break;
                     }
                 }
